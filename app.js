@@ -14,7 +14,8 @@ var app = express();
 
 //Import mongoose
 var mongoose = require('mongoose');
-var mongoURI = 'mongodb+srv://hector:librarydb3015@library.fwh2n.mongodb.net/Local_library?retryWrites=true&w=majority';
+require('dotenv').config();
+var mongoURI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@library.fwh2n.mongodb.net/Local_library?retryWrites=true&w=majority`;
 
 //Connect to db
 mongoose.connect(mongoURI, 
